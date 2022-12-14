@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "ee36ba14-01ba-4a91-a1ea-790bc82c43ce",
+		"name": "API_TOKENIZATION",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Registrar Tarjeta",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "pk_test_LsRBKejzCOEEWOsw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"card_number\": \"4518169258537\", \"cvv\": \"123\", \"email\": \"jorge@gmail.com\", \"expiration_year\": \"2023\", \"expiration_month\": \"12\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://4d3dd9ndo7.execute-api.us-east-1.amazonaws.com/v2/tokens",
+					"protocol": "https",
+					"host": [
+						"4d3dd9ndo7",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"v2",
+						"tokens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validar Token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "pk_test_LsRBKejzCOEEWOsw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://4d3dd9ndo7.execute-api.us-east-1.amazonaws.com/v2/tokens/97b3c986b0c3da4b",
+					"protocol": "https",
+					"host": [
+						"4d3dd9ndo7",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"v2",
+						"tokens",
+						"97b3c986b0c3da4b"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
